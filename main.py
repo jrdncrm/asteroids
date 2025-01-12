@@ -45,6 +45,11 @@ def main():
 				print("Game Over!")
 				return
 				sys.exit()
+		for destroyable in destroyables:
+			for shot in shots:
+				if destroyable.collision_check(shot):
+					destroyable.split()
+					shot.kill()
 		pygame.display.flip()
 
 
